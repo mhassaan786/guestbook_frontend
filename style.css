@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(25, 0, 35);
+}
+h1 {
+    color: rgb(120, 90, 230);
+    font-size: 2.5rem;
+    font-family: cursive;
+    text-align: center;
+    padding: 7px;
+    margin: 5px;
+}
+form{
+    background-color: rgb(120, 90, 230);
+    box-shadow: 0 0 10px rgba(243, 239, 239, 0.5);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 20px 15px;
+    margin: 20px auto;
+    width: 75%;
+}
+fieldset{
+    border: 2px solid rgb(25, 0, 35);
+    border-radius: 10px;
+    padding: 10px;
+}
+form label {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+form div {
+    margin: 25px 15px;
+}
+form input, textarea{
+    outline: none;
+    width: 50%;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+}
+form input[type="submit"] {
+    background-color: rgb(25, 0, 35);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+h2 {
+    color: rgb(120, 90, 230);
+    font-size: 2rem;
+    padding: 5px;
+    margin: 10px;
+}
+.msg2k25 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    padding: 5px;
+    margin: 10px;
+}
+.msg2k25 button {
+    padding: 10px 15px;
+    background-color: aliceblue;
+    color: rgb(25, 0, 35);
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+form p {
+    color: rgb(25, 0, 35);
+    font-size: 1.2rem;
+    margin: 10px;
+    padding: 5px;
+    font-weight: bolder;
+}
+.error {
+    color: red;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+} 
+.success {
+    color: green;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+}
+div[id="messages"] {
+    background-color: rgb(120, 90, 230);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px auto;
+    width: 75%;
+}
+.btn_log {
+    color:rgb(25, 0, 35);
+    background-color: rgb(120, 90, 230);
+    padding: 10px 15px;
+    margin: 7px 15px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+h3[id="UserName"]{
+    color: rgb(210, 210, 210);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    text-align: right;
+    margin: 15px 25px;
+}

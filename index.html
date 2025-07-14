@@ -1,0 +1,47 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        <title>Amazing App</title>
+        <link rel="stylesheet" href="style.css"></link>
+    </head>
+    <body>
+        <h1>Welcome To Our GuestBook App</h1>
+        <h3 id="UserName"></h3>
+        <form>            
+            <fieldset>
+                <legend>
+                    Info
+                </legend>
+                <div>
+                <label>Guest Name: </label>
+                <input required type="text" name="gname" placeholder="guest name...">
+                </div>
+                <div>
+                <label>Message: </label><br>
+                <textarea required name="msg" cols='5' rows='5' placeholder="message..."></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Message">
+                </div>
+            </fieldset>
+        </form>
+
+<!-- get All guest -->
+<h2>Guest Messages</h2>
+<div id="messages">   
+    Loading...
+</div>
+<!-- logout button -->
+<button class="btn_log" onclick='Logout()'>Log Out</button> 
+</body>
+
+<!-- script -->
+
+    <script type="module" src="main.js"></script>
+    <script>
+        function Logout() {
+            document.cookie = 'user_id=; path=/'
+            window.location.href = "./login.html"
+        }
+    </script>
+</html>

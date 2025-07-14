@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>REGISTER</h1>
+    <p id="msgInfo"></p>
+    <form id="reg">
+        <fieldset>
+            <legend>Registration Info</legend>
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required placeholder="Enter your username">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+            </div>
+            <div>
+                <input type="submit" value="Register">
+            </div>
+        </fieldset>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </form>
+    <script type="module" src="join.js"></script>
+</body>
+</html>
