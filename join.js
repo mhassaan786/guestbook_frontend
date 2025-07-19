@@ -1,24 +1,3 @@
-// configuration for backend
-import { API_BASE } from "./config.js";
-
-// checking if user is already loged in
-// function getCookies(name) {
-//     const cookies = document.cookie.split('; ');
-//     for (const cookie of cookies) {
-//         const [key, value] = cookie.trim().split('=');
-//         if (key === name) {
-//             return value;
-//         }
-//     }
-//     return null;
-// }
-// let user_id = getCookies("user_id") || 0
-
-// //is user_id not exist:
-// if(user_id != 0 && user_id != null ) {
-//     window.location.href = './';
-//     console.log(user_id)
-// }
 const formReg = document.querySelector('#reg');
 
 if(formReg) {

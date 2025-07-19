@@ -1,6 +1,4 @@
 // configuration for backend
-import { API_BASE } from "./config.js";
-
 async function Verifier() {
     const DataLogin = await fetch("/logined", {
         method: "GET"
