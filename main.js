@@ -1,8 +1,18 @@
 // configuration for backend
 import { API_BASE } from "./config.js";
 
-//configure for the user;
-let user_id = getCookies("user_id") || 0;
+async function Verifier() {
+    const DataLogin = await fetch("/logined", {
+        method: "GET"
+    })
+    .then((res) => res.json())
+    .catch(e => console.log(e))
+
+    if(!DataLogin.isLogined){
+        window.location.href = "./login.html"
+    }
+}
+Verifier();
 
 // state data
 const msg = document.querySelector('#messages');
@@ -11,7 +21,7 @@ const uname = document.querySelector("#UserName");
 // Function to fetch data from the server
 async function fetchData() {   
     try {
-        const response = await fetch(`${API_BASE}/api/data`, {
+        const response = await fetch("/api/data", {
             credentials: 'include'
         });
         if (!response.ok) {
@@ -34,21 +44,9 @@ async function fetchData() {
     }
 }
 
-// Check if user_id is set in cookies
-function getCookies(name){    
-    const cookies = document.cookie.split('; ');
-    for (const cookie of cookies) {
-        const [key, value] = cookie.trim().split('=');
-        if (key === name) {
-            return value;
-        }
-    }
-    return null;
-}
-
-if(user_id == null || user_id == 0) {
-    window.location.href = './login.html';    
-}else {
+// if(user_id == null || user_id == 0) {
+//     window.location.href = '/login.html';    
+// }else {
 
 // continue with the rest of the code
 const Form = document.querySelector('form');
@@ -58,7 +56,7 @@ Form.addEventListener('submit', async(event) => {
     console.log('Form Data:', Object.fromEntries( formData.entries() ));
     Form.reset();
     // Here you can add code to send the form data to the server
-    const sendData = await fetch(`${API_BASE}/`, {
+    const sendData = await fetch("/", {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json'
@@ -83,13 +81,13 @@ fetchData();
             console.log(id)
         }
     })
-}
+// }
 
 // delete custom messages
 async function DeleteAll(id) {
     if (!confirm('Are you sure you want to delete this message?')) return;
     try{
-    const res = await fetch(`${API_BASE}/${id}`, {
+    const res = await fetch(`/${id}`, {
     method: 'DELETE',
     })
     if(res.ok) {

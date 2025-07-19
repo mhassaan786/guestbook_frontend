@@ -2,22 +2,23 @@
 import { API_BASE } from "./config.js";
 
 // checking if user is already loged in
-function getCookies(name) {
-    const cookies = document.cookie.split('; ');
-    for (const cookie of cookies) {
-        const [key, value] = cookie.trim().split('=');
-        if (key === name) {
-            return value;
-        }
-    }
-    return null;
-}
-let user_id = getCookies("user_id") || 0
+// function getCookies(name) {
+//     const cookies = document.cookie.split('; ');
+//     for (const cookie of cookies) {
+//         const [key, value] = cookie.trim().split('=');
+//         if (key === name) {
+//             return value;
+//         }
+//     }
+//     return null;
+// }
+// let user_id = getCookies("user_id") || 0
 
-//is user_id not exist:
-if(user_id != 0 && user_id != null ) {
-    window.location.href = './';
-}
+// //is user_id not exist:
+// if(user_id != 0 && user_id != null ) {
+//     window.location.href = './';
+//     console.log(user_id)
+// }
 const formReg = document.querySelector('#reg');
 
 if(formReg) {
@@ -26,7 +27,7 @@ event.preventDefault();
 const formData = new FormData(formReg)
 const realData = Object.fromEntries(formData.entries());
 
-const data = await fetch(`${API_BASE}/register`, {
+const data = await fetch("/register", {
     method: "POST",
     headers:{
         'Content-Type': 'application/json'
@@ -62,7 +63,7 @@ formLogin.addEventListener('submit', async(e)=>{
     const realData = Object.fromEntries(formData.entries());
 
     //request to the server
-    const data = await fetch(`${API_BASE}/login`, {
+    const data = await fetch("/login", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -80,9 +81,9 @@ formLogin.addEventListener('submit', async(e)=>{
     success.textContent = res.message;    
     // console.log('Your Id: ', res.user_id, "we have name: ", res.username);
     setTimeout(() => {
-        document.cookie = `user_id= ${res.create_id}; path=/`; // Set cookie for 7 days
+        // document.cookie = `user_id= ${res.create_id}; path=/`; // Set cookie for 7 days
         window.location.href = './';
-    }, 2000)
+    }, 1500)
     formLogin.reset();
     }
     if(res.error){
@@ -94,8 +95,8 @@ formLogin.addEventListener('submit', async(e)=>{
         error.textContent = res.message;    
         error.textContent = res.message;
         setTimeout(() => {
-            window.location.href = './register.html';
-        }, 2000)
+            window.location.href = '/register.html';
+        }, 1500)
     }
 })
 };

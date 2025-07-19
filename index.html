@@ -2,7 +2,17 @@
 <html lang="en">
     <head>
         <title>Amazing App</title>
-        <link rel="stylesheet" href="style.css"></link>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="description" content="A web application where users must register/login to leave guest messages. Messages are saved in MongoDB and visible only to the logged-in user. Includes cookie-based authentication, message deletion, and responsive UI.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- open graph -->
+         <meta property="type" content="Website">
+         <meta property="site" content="Guest App">
+         <meta property="description" content="Now, you can write and store your quest message securely">
+         <meta property="url" content="https://github.com/mhassaan3786/">
+         
+        <link rel="stylesheet" href="./style.css"></link>
     </head>
     <body>
         <h1>Welcome To Our GuestBook App</h1>
@@ -39,9 +49,9 @@
 
     <script type="module" src="main.js"></script>
     <script>
-        function Logout() {
-            document.cookie = 'user_id=; path=/'
-            window.location.href = "./login.html"
+        async function Logout() {
+            await fetch("/logout")
+            window.location.href="./login.html"
         }
     </script>
 </html>
